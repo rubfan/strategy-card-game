@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+    </head>
+    <body>
+        <canvas width="250" height="100" id="fire" class="login-canvas"></canvas>
+
+        <ul>
+            <li>----------------------------------------------------------------</li>
+            <li>***** Dramatis Personae *****</li>
+            <li>Developer: ... (Building)</li>
+            <li>Developer: ... (Building)</li>
+            <li>Mentor: Ruslan Gramatic (User/Room/Message)</li>
+            <li>Developer: ... (User/Room/Message)</li>
+            <li>Developer: ... (Resource)</li>
+            <li>Developer: ... (Resource)</li>
+            <li>Developer: ... (Card)</li>
+            <li>Developer: ... (Card)</li>
+            <li>Developer: ... (Update/Achievement)</li>
+            <li>Developer: ... (Update/Achievement)</li>
+            <li>Developer: ... (Notification)</li>
+            <li>Developer: ... (Notification)</li>
+            <li>Developer: ... (Support)</li>
+            <li>Developer: ... (Support)</li>
+        </ul>
+
+        <img src="images/chicken_1.png" style="position: absolute; top:100px; right: 0">
+        <img src="images/chicken_2.png" style="position: absolute; top:80px; left: 0">
+
+        <div class="login-form">
+            <h1 class="game-logo-font" style="margin-bottom: 30px">Strategy Card Game</h1>
+            <input id="name" type="text" class="game-input" placeholder="Name"><br>
+            <input id="password" type="password" class="game-input" placeholder="Password"><br>
+            <button id="login" class="game-button" onclick="login()">Login</button>
+            <button id="new_user" class="game-button" onclick="createNewUser()">Create New User</button>
+            <button id="logout" class="game-button" onclick="logout()">Logout</button>
+            <button id="lets_play" onclick="static.roomsPage()"><b class="glow-effect">Let's Play!</b></button>
+            <button style="background-color: #7cff03; color: #333333" onclick="static.testPage()">Developer Tests</button>
+        </div>
+
+        <audio id="loginMusic">
+            <source src="music/login-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <script src="javascript/main.js"></script>
+        <script src="javascript/routing.js"></script>
+        <script src="javascript/login.js"></script>
+    </body>
+<html>

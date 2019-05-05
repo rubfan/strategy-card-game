@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/rooms.css">
+    </head>
+    <body>
+        <div class="game-site-header">
+            <ul class="ul-info">
+                <li><a class="active" href="rooms.html">Rooms</a></li>
+                <li><a href="gameplay.html">Gameplay</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li style="float: right">
+                    <a href="#" onclick="static.logoutPage()">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-rooms">
+            <h1 class='rooms-header'>Game Rooms</h1>
+            <table class='room-table'>
+                <thead>
+                    <tr>
+                        <th width='100px'>Room Number</th>
+                        <th>Room Name</th>
+                        <th>Room Description</th>
+                        <th>Occupant 1</th>
+                        <th>Game Time</th>
+                        <th>Occupant 2</th>
+                    </tr>
+                </thead>
+                <tbody id="roomsTableBody"></tbody>
+            </table>
+        </div>
+        <script src="javascript/main.js"></script>
+        <script src="javascript/routing.js"></script>
+        <script src="javascript/rooms.js"></script>
+    </body>
+<html>

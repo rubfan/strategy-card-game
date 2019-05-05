@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/test.css">
+  <style>
+    body {
+      color: #fff7d7;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td, th {
+        border: 1px solid #aa7500;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #1a273b;
+    }
+    .content {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 50px;
+    }
+  </style>
+</head>
+<html>
+<body>
+  <div class="game-site-header" style="width: 100%">
+    <ul class="ul-info">
+      <li><a href="login.html">Back to Login</a></li>
+      <li><a href="test.html">Developer Tests</a></li>
+    </ul>
+  </div>
+  <form class="content">
+    <div style="background-color: #3d709f; padding: 5px; border-radius: 10px;">
+      <b>Card ID:</b><input type="number" id="card_id" name="card_id" style="width:50px">
+      <b> Card Name:</b><input type="text" id="card_name" name="card_name" style="width:150px">
+      <b> Card Description:</b><input type="text" id="card_description" name="card_description" style="width:300px">
+      <b>Card Group:</b><select id="groups"></select>
+    </div>
+    <br>
+    <div style="background-color: #1f2f46; padding: 5px; border-radius: 10px;">
+    <br>Select Resource:
+      <select id="resource"></select>
+      Number:<input type="number" id="resource_number" name="resource_number" style="width:50px">
+      <button type="button" onclick="setValue(playerResources, 'resource', 'resource_number')">Set to player</button>
+      <button type="button" onclick="removeValue(playerResources, 'resource')">Remove from player</button>
+      <button type="button" onclick="setValue(enemyResources, 'resource', 'resource_number')">Set to enemy</button>
+      <button type="button" onclick="removeValue(enemyResources, 'resource')">Remove from enemy</button>
+    </div>
+    <br>
+    <div style="background-color: #1f2f46; padding: 5px; border-radius: 10px;">
+      Select Building:
+      <select id="building"></select>
+      Number:<input type="number" id="building_number" name="building_number" style="width:50px">
+      <button type="button" onclick="setValue(playerBuildings, 'building', 'building_number')">Set to player</button>
+      <button type="button" onclick="removeValue(playerBuildings, 'building')">Remove from player</button>
+      <button type="button" onclick="setValue(enemyBuildings, 'building', 'building_number')">Set to enemy</button>
+      <button type="button" onclick="removeValue(enemyBuildings, 'building')">Remove from enemy</button>
+      <button type="button" onclick="setValue(necessaryBuildings, 'building', 'building_number')">Set to necessary</button>
+      <button type="button" onclick="removeValue(necessaryBuildings, 'building')">Remove from necessary</button>
+    </div>
+    <br>
+    <div style="background-color: #1f2f46; padding: 5px; border-radius: 10px;">
+      Select Upgrade:
+      <select id="upgrade"></select>
+      Number:<input type="number" id="upgrade_number" name="upgrade_number" style="width:50px">
+      <button type="button" onclick="setValue(playerUpgrades, 'upgrade', 'upgrade_number')">Set to player</button>
+      <button type="button" onclick="removeValue(playerUpgrades, 'upgrade')">Remove from player</button>
+      <button type="button" onclick="setValue(enemyUpgrades, 'upgrade', 'upgrade_number')">Set to enemy</button>
+      <button type="button" onclick="removeValue(enemyUpgrades, 'upgrade')">Remove from enemy</button>
+      <button type="button" onclick="setValue(necessaryUpgrades, 'upgrade', 'upgrade_number')">Set to necessary</button>
+      <button type="button" onclick="removeValue(necessaryUpgrades, 'upgrade')">Remove from necessary</button>
+    </div>
+  </form>
+
+  <h3>Select Resource, Building or Upgrade, set the number and click the button to change the card!</h3>
+  
+  <div id="query"></div>
+  <div id="card"></div>
+
+  <script>
+    const MAX_PRODUCTS = 100;
+    const GROUPS = ['Resources Cards','Building Cards','Upgrades Cards','Battle Cards'];
+    const RESOURCES = ['corn','eggs','chickens','dung','hens','cocks','fighting cocks','stone','cocks with hammers','cocks with slingshots',
+                       'steel','cocks swordsmen (in lats)','cocks with axes (in lats)','wood','cocks archers','cocks lancers','gunpowder',
+                       'cocks gunners','cocks with bazookas','mana','cocks magicians','cocks prophets','experience','cockiness'];
+    const BUILDINGS = ['Granary','Chicken House','Incubator','Cleaning Center','Chicken Yard','Cocks House','Cocks Barrack','Quarry',
+                       'School of Hammers','School of Slingshots','Blast Furnace','School of Swordsmens','School of Axes','Logger','School of Archers',
+                       'School of Lancers','Alchemy Laboratory','School of Gunners','School of Bazookas','Altar','School of Mages','Ziggurat'];
+    const UPGRADES = [];
+
+    var playerResources = {};
+    var playerBuildings = {};
+    var playerUpgrades = {};
+    var enemyResources = {};
+    var enemyBuildings = {};
+    var enemyUpgrades = {};
+    var necessaryBuildings = {};
+    var necessaryUpgrades = {};
+
+    function setValue(dataSource, idSource, valSource) {
+      dataSource[new Number(document.getElementById(idSource).value) + 1] = document.getElementById(valSource).value;
+      showCard();
+      showSql();
+    }
+    function removeValue(dataSource, idSource) {
+      var id = new Number(document.getElementById(idSource).value) + 1;
+      if(dataSource.hasOwnProperty(id)) {
+        delete dataSource[id];
+        showCard();
+        showSql();
+      }
+    }
+
+    function showSql() {
+        var id = ,
+            card_id,
+            card_group_id,
+            p1_set_building_id,
+            p2_set_building_id,
+            p1_set_resource_id,
+            p2_set_resource_id,
+            p1_set_upgrade_id,
+            p2_set_upgrade_id,
+            necessary_set_building_id,
+            necessary_set_upgrade_id
+    }
+    //`Card_Product(id, card_id, card_group_id, p1_set_building_id, p2_set_building_id, p1_set_resource_id, p2_set_resource_id, p1_set_upgrade_id, p2_set_upgrade_id, necessary_set_building_id, necessary_set_upgrade_id)`
+
+    //Set_Building(id, set_id, building_id, number), Set_Resource(id, set_id, resource_id, number), Set_Upgrade(id, set_id, upgrade_id, number)
+//    INSERT INTO `Room`
+//    (`name`,`description`)
+//    VALUES
+//    ('Kiev','Kiev Room'),
+//        ('Chisinau','Chisinau Room'),
+//        ('Islamabad','Islamabad Room')
+    function showCard() {
+      var content = '';
+      for (var i = 1; i < MAX_PRODUCTS; i++) {
+        content +=
+            `<tr>
+              <td>${createTd(playerResources, i, RESOURCES)}</td>
+              <td>${createTd(playerBuildings, i, BUILDINGS)}</td>
+              <td>${createTd(playerUpgrades, i, UPGRADES)}</td>
+              <td>${createTd(enemyResources, i, RESOURCES)}</td>
+              <td>${createTd(enemyBuildings, i, BUILDINGS)}</td>
+              <td>${createTd(enemyUpgrades, i, UPGRADES)}</td>
+              <td>${createTd(necessaryBuildings, i, BUILDINGS)}</td>
+              <td>${createTd(necessaryUpgrades, i, UPGRADES)}</td>
+            </tr>`;
+      }
+      document.getElementById("card").innerHTML = 
+      `<table>
+        <tr>
+          <th>Player Resources</th>
+          <th>Player Buildings</th>
+          <th>Player Upgrades</th>
+          <th>Enemy Resources</th>
+          <th>Enemy Buildings</th>
+          <th>Enemy Upgrades</th>
+          <th>Necessary Buildings</th>
+          <th>Necessary Upgrades</th>
+        </tr>
+        ${content}
+      </table>`;
+    }
+    function createTd(source, i, names) {
+      return (source.hasOwnProperty(i) ?
+        `id:${i}<br>name:${names[i-1]}<br>number:${source[i] < 0 ? 
+          '<b style="color:#F00">' + source[i] + '</b>' : '<b style="color:#00F">' + source[i] + '</b>'}` : '');
+    }
+
+    function initResources() {
+      var source = '';
+      for (var i = 0; i < RESOURCES.length; i++) {
+        source += `<option value="${i}">${RESOURCES[i]}</option>`;
+      }
+      document.getElementById('resource').innerHTML = source;
+    }
+
+    function initBuildings() {
+      var source = '';
+      for (var i = 0; i < BUILDINGS.length; i++) {
+        source += `<option value="${i}">${BUILDINGS[i]}</option>`;
+      }
+      document.getElementById('building').innerHTML = source;
+    }
+
+    function initUpgrades() {
+      var source = '';
+      for (var i = 0; i < BUILDINGS.length; i++) {
+        source += `<option value="${i}">Upgrade ${BUILDINGS[i]} by ${RESOURCES[i]}</option>`;
+        UPGRADES.push(`Upgrade ${BUILDINGS[i]} by ${RESOURCES[i]}`);
+      }
+      console.log(UPGRADES);
+      document.getElementById('upgrade').innerHTML = source;
+    }
+
+    function initGroups() {
+      var source = '';
+      for (var i = 0; i < GROUPS.length; i++) {
+        source += `<option value="${i}">${GROUPS[i]}</option>`;
+      }
+      document.getElementById('groups').innerHTML = source;
+    }
+
+    initResources();
+    initBuildings();
+    initUpgrades();
+    initGroups();
+  </script>
+
+</body>
+</html>

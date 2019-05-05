@@ -1,0 +1,10 @@
+.game-screen {
+    padding: 80px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+body{
+    background-image: url("../images/gameplay_background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}

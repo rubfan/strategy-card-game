@@ -1,0 +1,1 @@
+web:    java -cp target/classes:target/dependency/* ua.od.game.ApplicationStarter deploy

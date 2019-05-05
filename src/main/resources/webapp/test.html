@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/test.css">
+    </head>
+    <body>
+        <div class="game-site-header" style="width: 100%">
+            <ul class="ul-info">
+                <li><a href="login.html">Back to Login</a></li>
+                <li><a href="card-generator.html">Card Script Generator</a></li>
+            </ul>
+        </div>
+        <div style="padding-top: 48px">
+            <button class="game-button" onclick="testEndpoints.testRoomController.getAllRoomList()">All Rooms</button>
+            <button class="game-button" onclick="testEndpoints.testResourceController.getAllResourceList()">All Resources</button>
+            <button class="game-button" onclick="testEndpoints.testNotificationController.getAllNotificationList()">All Notifications</button>
+            <button class="game-button" onclick="testEndpoints.testBuildingController.getAllBuildingList()">All Buildings</button>
+            <button class="game-button" onclick="testEndpoints.testAchievementController.getAllAchievementList()">All Achievements</button>
+            <button class="game-button" onclick="testEndpoints.testUpgradeController.getAllUpgradeList()">All Upgrades</button>
+        </div>
+
+        <div class="container-test">
+            <h1 class='test-header'>Test Result</h1>
+            <div id="result"></div>
+        </div>
+
+        <script src="javascript/main.js"></script>
+        <script src="javascript/routing.js"></script>
+        <script src="javascript/test.js"></script>
+    </body>
+<html>

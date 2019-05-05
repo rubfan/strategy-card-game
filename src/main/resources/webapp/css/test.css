@@ -1,0 +1,26 @@
+.test-header{
+    margin-top: -55px;
+    text-align: center;
+    text-shadow: 2px 0 0 #bfbfbf, -2px 0 0 #BFBFBF, 0 2px 0 #BFBFBF, 0 -2px 0 #BFBFBF, 1px 1px #BFBFBF, -1px -1px 0 #BFBFBF, 1px -1px 0 #BFBFBF, -1px 1px 0 #BFBFBF;
+}
+
+.container-test {
+    background: -webkit-radial-gradient(center,ellipse cover, #003b0f 50%, #15222a 100%);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7) inset;
+    border-width: 3px;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: #4d616f #556774 #556774 #4d616f;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 185px;
+    margin: 20px;
+    overflow-y: scroll;
+    padding: 80px
+}
+
+#result {
+    color: #88ce47;
+}

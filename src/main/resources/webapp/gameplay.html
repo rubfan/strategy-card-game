@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/gameplay.css">
+    </head>
+    <body>
+        <div class="game-site-header">
+            <ul class="ul-info">
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a class="active" href="gameplay.html">Gameplay</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="#">End Game</a></li>
+                <a href="#" onclick="static.logoutPage()">Logout</a>
+            </ul>
+        </div>
+
+        <div class="birds-container">
+            <div class="bird-container bird-container-one">
+                <div class="bird bird-one"></div>
+            </div>
+            <div class="bird-container bird-container-two">
+                <div class="bird bird-two"></div>
+            </div>
+        </div>
+
+        <div class="clouds-container">
+            <div id="clouds">
+                <div class="cloud1"></div>
+                <div class="cloud2"></div>
+                <div class="cloud3"></div>
+            </div>
+            <div id="clouds2">
+                <div class="cloud1"></div>
+                <div class="cloud2"></div>
+                <div class="cloud3"></div>
+            </div>
+        </div>
+
+        <div class="game-screen">
+            <div id="user_info" class="user-info"></div>
+            <div id="cards_container" class="cards-container"></div>
+            <div id="building_items" class="building-items" style="width: 300px; height: 300px"></div>
+            <div id="enemy_building_items" class="enemy-building-items" style="width: 300px; height: 300px"></div>
+            <div id="resource_container" class="resource-container"></div>
+            <div id="count_down_time" class="count-down-time"></div>
+
+            <div class="chat-component">
+                <div id="chat_container" class="chat-container">
+                    <div id="chat_items" class="chat-items"></div>
+                </div>
+                <div style="width: 100%; display: table">
+                    <input style="width: 63%" id="message" type="text" class="game-input"
+                           onkeyup="onEnterMessageTextBox(event)" placeholder="Enter message">
+                    <button style="width: 20%" id="send_message" class="game-button" onclick="restRequest('POST',
+                        REST_API_URL + '/message/send', clearMessageTextBox, {
+                            text: document.getElementById('message').value
+                        })">Send
+                    </button>
+                </div>
+            </div>
+
+            <div id="left_king" class="left-king cylinder"></div>
+            <div id="right_king" class="right-king cylinder"></div>
+            <div id="tooltip_component" class="tooltip-component"></div>
+        </div>
+
+        <div id="notification_container" class="notification-container"></div>
+
+        <script src="javascript/main.js"></script>
+        <script src="javascript/routing.js"></script>
+        <script src="javascript/gameplay/user.js"></script>
+        <script src="javascript/gameplay/chat.js"></script>
+        <script src="javascript/gameplay/buildings.js"></script>
+        <script src="javascript/gameplay/upgrades.js"></script>
+        <script src="javascript/gameplay/resources.js"></script>
+        <script src="javascript/gameplay/cards.js"></script>
+        <script src="javascript/gameplay/notifications.js"></script>
+        <script src="javascript/gameplay.js"></script>
+    </body>
+<html>

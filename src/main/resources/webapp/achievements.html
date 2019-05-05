@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/achievements.css">
+    </head>
+    <body>
+        <div class="game-site-header">
+            <ul class="ul-info">
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="gameplay.html">Gameplay</a></li>
+                <li><a class="active" href="achievements.html">Achievements</a></li>
+                <li style="float: right">
+                    <a href="#" onclick="static.logoutPage()">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-achievements">
+            <h1 class='achievements-header'>Achievements</h1>
+            <table class='achievements-table'>
+                <thead>
+                    <tr>
+                        <th width='100px'>Achievement Number</th>
+                        <th>Achievement Name</th>
+                        <th>Achievement Description</th>
+                    </tr>
+                </thead>
+                <tbody id="achievementTableBody"></tbody>
+            </table>
+        </div>
+        <script src="javascript/main.js"></script>
+        <script src="javascript/routing.js"></script>
+        <script src="javascript/achievements.js"></script>
+    </body>
+<html>

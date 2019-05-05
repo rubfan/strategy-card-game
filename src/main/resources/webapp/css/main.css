@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'game-font';
+    src: url(../font/CHMCPixel.ttf);
+}
+
+html {
+    font-family: 'game-font';
+}
+
+body {
+    border-width: 0;
+    margin: 0;
+    background-color: #1c202a;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.game-site-header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background: #313e4b;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #232b34;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*====================MENU=====================*/
+
+.ul-info {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #313e4b;
+}
+
+.ul-info li {
+    float: left;
+}
+
+.ul-info li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.ul-info li a:hover:not(.active) {
+    background: -webkit-radial-gradient(center,ellipse cover, #af6c00 40%, rgba(76, 123, 182, 0.0) 60%);
+}
+
+.ul-info .active {
+    background: -webkit-radial-gradient(center,ellipse cover, #4b7caf 40%, rgba(76, 123, 182, 0.0) 60%);
+}
+
+
+
+/*=================Game Component Styles=============*/
+select {
+    font-size: 16px;
+    height: 34px;
+}
+
+input[type=text], input[type=password], input[type=number], select {
+    margin: 5px;
+    display: inline-block;
+    box-sizing: content-box;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    color: rgb(0, 142, 198);
+    text-align: left;
+    text-indent: 0px;
+    text-overflow: clip;
+    letter-spacing: 0px;
+    white-space: normal;
+    word-spacing: 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px 0px inset;
+    text-shadow: rgba(255, 255, 255, 0.66) 1px 1px 0px;
+    padding: 10px 20px;
+    outline: none;
+    border-width: 4px;
+    border-style: solid;
+    border-image: initial;
+    font: 16px "game-font";
+    text-decoration: none;
+    background: rgb(252, 252, 252);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    border-radius: 8px;
+    border-color: #2d3d4a #687f91 #687f91 #2d3d4a;
+}
+
+button {
+    border-width: 3px;
+    border-style: outset;
+    border-radius: 8px;
+    border-color: #475966 #5e7587 #5e7587 #475966;
+    background: #313e4b;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 5px;
+    text-decoration: none;
+    outline: none;
+    border-image: initial;
+    padding: 10px 10px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    top: 0;
+    font: 16px "game-font";
+    text-align: center;
+    transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+    -webkit-box-shadow: 0 1px 0 0 rgba(138, 138, 138, 0.21) inset, 0 -1px 1px 0 rgba(137, 137, 137, 0.21) inset, 0 7px 0 0 rgba(98, 98, 98, 0.2), 0 8px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+button:hover {
+    border-radius: 8px;
+    color: rgb(255, 228, 42);
+}
+
+button:active {
+    top: 6px;
+    color: rgb(159, 206, 255);
+    -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+    transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+
+.glow-effect {
+    text-shadow:1px 1px 10px #00f2ff, 1px 1px 30px #eee;
+}
+
+
+
