@@ -6,7 +6,7 @@
 
 [Ссылка на Project Management app](https://trello.com/b/ogkPLt2D/strategy-card-game)
 
-[Ссылка на Project CI(Continues Integration)](https://travis-ci.org/)
+[Ссылка на Project CI(Continues Integration)](https://travis-ci.com/rubfan/strategy-card-game/)
 
 [Ссылка на Project Cloud](https://devcenter.heroku.com/categories/reference)
 
