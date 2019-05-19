@@ -36,6 +36,28 @@
 - [HTML](https://www.w3schools.com/html/default.asp)
 - [CSS](https://www.w3schools.com/css/default.asp)
 
+# Файлы скелета приложения
+---------------------
+- `/src/main/java/ua/od/game/config/AppContextConfig.java` - настройки контекста приложения(!!!тут вручную надо регистрировать новые классы проекта!!!)
+- `/src/main/java/ua.od.game/config/DataBaseConfig.java` - загрузка `db.properties` файла с конфигурациями базы данных при старте проекта для доступа из Java
+- `/src/main/java/ua.od.game/ApplicationStarter.java` - загрузка всех конфигураций и запуск Jetty сервера
+- `/src/main/java/ua.od.game/DataBaseDeployer.java` - развертывание базы данных согласно SQL скриптам собранным в папке `/src/main/resources/db/*.sql`
+- `/src/main/java/ua.od.game/repository/helper/SqlHelper.java` - обычный класс помощник который упрощает работу с JDBC
+- `/src/main/resources/config/db.properties` - тут находятся все конфигурации которые позволяют работать с базой данных
+- `/src/main/resources/db/*.sql` - тут находятся все SQL скрипты которые позволяют развернуть базу данных и заполнить ее начальными статичными данными
+
+- `/src/test/java/ua/od/game/repository/dao/DbTest.java` - super класс всех тестов связанных с базой данных - автоматически разворачивает h2 базу используя настройки из файла `/src/test/resources/config/db.properties` и файлы SQL скриптов из папки `/src/test/resources/db/*.sql`
+- `/src/test/resources/config/db.properties` - тут находятся все конфигурации которые позволяют работать с базой данных на этапе тестирования
+- `/src/test/resources/db/*.sql` - тут находятся все SQL скрипты которые позволяют развернуть базу данных и заполнить ее данными для тестов
+
+- `/src/main/resources/webapp/*.html` - все HTML файлы разметки отображения для отрисовки View (нашего MVC приложения)
+- `/src/main/resources/webapp/css/*.css`  - все CSS файлы стилизации отображения (расположение, размеры, цвета, толщина, отступы, закругления и т.д.)
+- `/src/main/resources/webapp/font/*.ttf` - файлы шрифтов
+- `/src/main/resources/webapp/images/*.png`, `*.jpg`, `*.svg` - картинки для наполнения HTML страниц и CSS стилей
+- `/src/main/resources/webapp/javascript/*.js` - все Front End скритпы (или программы), наиважнейший из них `routing.js` который позволяет делать AJAX http запросы на наш Java Back End на написанные нами эндпоинты запуская замапленные на них методы в Controllers классах.
+- `/src/main/resources/webapp/music/*.mp3` - файлы фоновой музыки
+- `/src/main/resources/webapp/sounds/*.mp3` - файлы разных звуковых эфектов(например звук нажатия кнопки)
+
 # Краткое описание проекта:
 =========================== 
 ```
