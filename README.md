@@ -10,12 +10,26 @@
 
 [Ссылка на Project Cloud](https://devcenter.heroku.com/categories/reference)
 
-## Application Design:
-![Application Design](http://www.javasavvy.com/wp-content/uploads/2017/03/Spring-REST-Web-Services.png "Application Design")
+# FE Технологии:
+---------------------
+- [JavaScript](https://www.w3schools.com/jS/default.asp)
+- [Ajax](https://www.w3schools.com/jS/js_ajax_intro.asp)
+- [Json](https://www.w3schools.com/js/js_json_intro.asp)
+- [HTML](https://www.w3schools.com/html/default.asp)
+- [CSS](https://www.w3schools.com/css/default.asp)
 
-## REST HTTP verbs mapped to CRUD
+## FE Файлы и папки скелета приложения: 
+---------------------
+- [/src/main/resources/webapp/*.html](/src/main/resources/webapp/) - все HTML файлы разметки отображения для отрисовки View (нашего MVC приложения)
+- [/src/main/resources/webapp/css/*.css](/src/main/resources/webapp/css/)  - все CSS файлы стилизации отображения (расположение, размеры, цвета, толщина, отступы, закругления и т.д.)
+- [/src/main/resources/webapp/font/*.ttf](/src/main/resources/webapp/font/) - файлы шрифтов
+- [/src/main/resources/webapp/images/*.png, *.jpg, *.svg](/src/main/resources/webapp/images/) - картинки для наполнения HTML страниц и CSS стилей
+- [/src/main/resources/webapp/javascript/*.js](/src/main/resources/webapp/javascript/) - все Front End скритпы (или программы), наиважнейший из них `routing.js` который позволяет делать AJAX http запросы на наш Java Back End на написанные нами эндпоинты запуская замапленные на них методы в Controllers классах.
+- [/src/main/resources/webapp/music/*.mp3](/src/main/resources/webapp/music/) - файлы фоновой музыки
+- [/src/main/resources/webapp/sounds/*.mp3](/src/main/resources/webapp/sounds/) - файлы разных звуковых эфектов(например звук нажатия кнопки)
+
+## Обмен данными между BE <-> FE: REST HTTP verbs mapped to CRUD
 <img src="http://docs.railsbridge.org/job-board/img/crud_grid.jpg" width="400" height="300" />
-
 
 # BE Технологии:
 ---------------------
@@ -30,6 +44,9 @@
 - [REST](https://www.codecademy.com/articles/what-is-rest)
 - [Jetty (Web server and javax.servlet container)](https://www.eclipse.org/jetty/)
 - [Jersey (JAX-RS)](https://jersey.github.io/)
+
+## BE Application Design:
+![Application Design](http://www.javasavvy.com/wp-content/uploads/2017/03/Spring-REST-Web-Services.png "Application Design")
 
 ## BE Файлы и папки скелета приложения: 
 ---------------------
@@ -49,24 +66,6 @@
 - [/src/test/java/ua/od/game/repository/dao/DbTest.java](/src/test/java/ua/od/game/repository/dao/DbTest.java) - super класс всех тестов связанных с базой данных - автоматически разворачивает h2 базу используя настройки из файла `/src/test/resources/config/db.properties` и файлы SQL скриптов из папки `/src/test/resources/db/*.sql`
 - [/src/test/resources/config/db.properties](/src/test/resources/config/db.properties) - тут находятся все конфигурации которые позволяют работать с базой данных на этапе тестирования
 - [/src/test/resources/db/*.sql](/src/test/resources/db/) - тут находятся все SQL скрипты которые позволяют развернуть базу данных и заполнить ее данными для тестов
-
-# FE Технологии:
----------------------
-- [JavaScript](https://www.w3schools.com/jS/default.asp)
-- [Ajax](https://www.w3schools.com/jS/js_ajax_intro.asp)
-- [Json](https://www.w3schools.com/js/js_json_intro.asp)
-- [HTML](https://www.w3schools.com/html/default.asp)
-- [CSS](https://www.w3schools.com/css/default.asp)
-
-## FE Файлы и папки скелета приложения: 
----------------------
-- [/src/main/resources/webapp/*.html](/src/main/resources/webapp/) - все HTML файлы разметки отображения для отрисовки View (нашего MVC приложения)
-- [/src/main/resources/webapp/css/*.css](/src/main/resources/webapp/css/)  - все CSS файлы стилизации отображения (расположение, размеры, цвета, толщина, отступы, закругления и т.д.)
-- [/src/main/resources/webapp/font/*.ttf](/src/main/resources/webapp/font/) - файлы шрифтов
-- [/src/main/resources/webapp/images/*.png, *.jpg, *.svg](/src/main/resources/webapp/images/) - картинки для наполнения HTML страниц и CSS стилей
-- [/src/main/resources/webapp/javascript/*.js](/src/main/resources/webapp/javascript/) - все Front End скритпы (или программы), наиважнейший из них `routing.js` который позволяет делать AJAX http запросы на наш Java Back End на написанные нами эндпоинты запуская замапленные на них методы в Controllers классах.
-- [/src/main/resources/webapp/music/*.mp3](/src/main/resources/webapp/music/) - файлы фоновой музыки
-- [/src/main/resources/webapp/sounds/*.mp3](/src/main/resources/webapp/sounds/) - файлы разных звуковых эфектов(например звук нажатия кнопки)
 
 # Краткая справка по таблицам
 ============================
