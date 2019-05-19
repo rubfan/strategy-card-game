@@ -50,6 +50,10 @@
 ## BE Application Design:
 ![Application Design](http://www.javasavvy.com/wp-content/uploads/2017/03/Spring-REST-Web-Services.png "Application Design")
 <img src="https://i.stack.imgur.com/mXDCT.jpg" width="500" height="300" />
+<img src="https://www.javacodegeeks.com/wp-content/uploads/2014/07/Rest-Demo-Diagram.png" width="600" height="300" />
+<img src="https://aishwaryavaishno.files.wordpress.com/2013/07/flow1.png" width="600" height="300" />
+
+
 
 ## BE Файлы и папки скелета приложения: 
 ---------------------
