@@ -30,6 +30,8 @@
 
 ## Обмен данными между BE <-> FE: REST HTTP verbs mapped to CRUD
 <img src="http://docs.railsbridge.org/job-board/img/crud_grid.jpg" width="400" height="300" />
+<img src="http://javascript-coder.com/wp-content/uploads/2014/11/ajax-block-diagram1.jpg" width="500" height="300" />
+<img src="http://safehammad.com/wp-uploads/2010/10/json-rest3.png" width="500" height="300" />
 
 # BE Технологии:
 ---------------------
@@ -47,6 +49,7 @@
 
 ## BE Application Design:
 ![Application Design](http://www.javasavvy.com/wp-content/uploads/2017/03/Spring-REST-Web-Services.png "Application Design")
+<img src="https://i.stack.imgur.com/mXDCT.jpg" width="500" height="300" />
 
 ## BE Файлы и папки скелета приложения: 
 ---------------------
