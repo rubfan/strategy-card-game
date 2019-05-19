@@ -1,7 +1,5 @@
 # Strategy Card Game Project
 
-![Alt text](database.png "Strategy Card Game DB Schema")
-
 [Ссылка на Схему базы данных](https://app.sqldbm.com/MySQL/Edit/p43934/)
 
 [Ссылка на статические данные для наполнения таблиц в нашей базе данных](https://docs.google.com/spreadsheets/d/1BEA-_cTu4PggzN32PsvMAReF-o24hz7FQkcQkyPnmEI/edit#gid=567549390)
@@ -36,8 +34,19 @@
 - [HTML](https://www.w3schools.com/html/default.asp)
 - [CSS](https://www.w3schools.com/css/default.asp)
 
-# Файлы скелета приложения
+# Application Design:
+![Application Design](http://www.javasavvy.com/wp-content/uploads/2017/03/Spring-REST-Web-Services.png "Application Design")
+
+## REST HTTP verbs mapped to CRUD
+<img src="http://docs.railsbridge.org/job-board/img/crud_grid.jpg" width="400" height="300" />
+
+# Файлы и папки скелета приложения
 ---------------------
+- [/src/main/java/ua/od/game/controller](/src/main/java/ua/od/game/controller) - контроллеры содержщие эндпоинт методы которые вызываются в зависимости от того какой пришел HTTP запрос на Jetty сервер 
+- [/src/main/java/ua/od/game/dto](/src/main/java/ua/od/game/dto) - классы обертки данных, служат для обмена данными между слоем контроллеров и сервисов 
+- [/src/main/java/ua/od/game/service](/src/main/java/ua/od/game/service) - классы содержащие бизнес логику приложения
+- [/src/main/java/ua/od/game/model](/src/main/java/ua/od/game/model) - классы обертки данных, служат для обмена данными между слоем сервисов и слоем DAO классов
+- [/src/main/java/ua/od/game/repository/dao](/src/main/java/ua/od/game/repository/dao) - DAO классы в которых находятся методы содержащие SQL CRUD операции для взаимодействия с сущностями реляционных баз данных и превращения их в Entity Java обьекты, или другими словами классы которые занимаются ORM задачами
 - [/src/main/java/ua/od/game/config/AppContextConfig.java](/src/main/java/ua/od/game/config/AppContextConfig.java) - настройки контекста приложения(!!!тут вручную надо регистрировать новые классы проекта!!!)
 - [/src/main/java/ua/od/game/config/DataBaseConfig.java](/src/main/java/ua/od/game/config/DataBaseConfig.java) - загрузка `db.properties` файла с конфигурациями базы данных при старте проекта для доступа из Java
 - [/src/main/java/ua/od/game/ApplicationStarter.java](/src/main/java/ua/od/game/ApplicationStarter.java) - загрузка всех конфигураций и запуск Jetty сервера
@@ -114,6 +123,7 @@ Account_Building, Account_Resource, Account_Upgrade, для себя и для �
 
 # Краткая справка по таблицам
 ============================
+![Alt text](database.png "Strategy Card Game DB Schema")
 
 `User` - таблица в которой сохранены все зарегистрированые в игре пользователи
 
