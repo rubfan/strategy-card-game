@@ -47,13 +47,24 @@
 - [Jetty (Web server and javax.servlet container)](https://www.eclipse.org/jetty/)
 - [Jersey (JAX-RS)](https://jersey.github.io/)
 
+## Using Design Patterns
+- [Enterprise патерны](https://martinfowler.com/articles/enterprisePatterns.html)
+- [J2EE патерны](https://stackabuse.com/java-j2ee-design-patterns)
+- [Web патерны](http://www.corej2eepatterns.com/DataAccessObject.htm)
+- [Патерны](http://design-pattern.ru/index.html)
+- [Chain of responsibility](https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BF%D0%BE%D1%87%D0%BA%D0%B0_%D0%BE%D0%B1%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9)
+- [DTO](https://ru.wikipedia.org/wiki/DTO)
+- [DAO](https://ru.wikipedia.org/wiki/Data_Access_Object)
+- [MVC](https://ru.wikipedia.org/wiki/Model-View-Controller)
+- [ORM](https://ru.wikipedia.org/wiki/ORM)
+- [JPA](https://ru.wikipedia.org/wiki/Java_Persistence_API)
+- [POJO](https://ru.wikipedia.org/wiki/POJO)
+
 ## BE Application Design:
 ![Application Design](http://www.javasavvy.com/wp-content/uploads/2017/03/Spring-REST-Web-Services.png "Application Design")
 <img src="https://i.stack.imgur.com/mXDCT.jpg" width="500" height="300" />
 <img src="https://www.javacodegeeks.com/wp-content/uploads/2014/07/Rest-Demo-Diagram.png" width="600" height="300" />
 <img src="https://aishwaryavaishno.files.wordpress.com/2013/07/flow1.png" width="600" height="300" />
-
-
 
 ## BE Файлы и папки скелета приложения: 
 ---------------------
