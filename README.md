@@ -1,4 +1,6 @@
-# je3-project
+# Strategy Card Game Project
+
+![Alt text](database.png "Strategy Card Game DB Schema")
 
 [Ссылка на Схему базы данных](https://app.sqldbm.com/MySQL/Edit/p43934/)
 
